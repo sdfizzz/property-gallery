@@ -50,7 +50,7 @@ span {
   @include breakpoint(desktop) {
     margin: auto;
     row-gap: 45px;
-    max-width: 1024px;
+    width: min-content;
     padding: 36px 50px;
   }
 }

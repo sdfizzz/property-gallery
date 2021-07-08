@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { CardPropType, CardType } from './types';
 
 const Mark = ({ type }: { type: CardType }) => {
@@ -43,12 +44,14 @@ const Description = ({ info: { title, address, price } }: { info: CardPropType }
 );
 
 const Card = ({ info }: { info: CardPropType }) => {
-  const { title, type } = info;
+  const { id, title, type } = info;
   return (
-    <div className="app__gallery__board-card">
-      <Image src={`https://via.placeholder.com/320x200/ACD1AF/FFFFFF?text=${title}`} type={type} />
-      <Description info={info} />
-    </div>
+    <Link to={`/details/${id}`}>
+      <div className="app__gallery__board-card">
+        <Image src={`https://via.placeholder.com/320x200/ACD1AF/FFFFFF?text=${title}`} type={type} />
+        <Description info={info} />
+      </div>
+    </Link>
   );
 };
 
