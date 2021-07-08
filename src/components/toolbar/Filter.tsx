@@ -10,9 +10,7 @@ const Filter = () => {
     (event: React.FormEvent<HTMLInputElement>) => {
       const newValue = event.currentTarget.value.trim();
       setValue(newValue);
-      if (value !== newValue) {
-        dispatch({ type: FILTER_CARDS, filter: newValue });
-      }
+      dispatch({ type: FILTER_CARDS, filter: newValue });
     },
     [dispatch],
   );
@@ -20,7 +18,7 @@ const Filter = () => {
   return (
     <label className="app__toolbar__filter">
       <span className="app__toolbar__filter-label">Filter</span>
-      <input type="search" onChange={handleChange} value={value} className="app__toolbar__filter-input" />
+      <input type="search" onInput={handleChange} value={value} className="app__toolbar__filter-input" />
     </label>
   );
 };

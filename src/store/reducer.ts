@@ -28,6 +28,7 @@ const reducer = (state: State = initialState, action: Action) => {
       };
     case actionTypes.FILTER_CARDS:
       const filterStr = (action as FilterAction).filter;
+      console.log('filterStr', filterStr);
       return {
         ...state,
         filteredCards: filterStr.length > 3 ? state.cards.filter((v) => v.title.includes(filterStr)) : [...state.cards],
