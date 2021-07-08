@@ -1,0 +1,28 @@
+@import 'variables';
+@import 'mixins';
+
+.app__toolbar {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint(desktop) {
+    align-items: flex-start;
+  }
+}
+
+.app__toolbar__filter-label {
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.app__toolbar__filter-input {
+  @include rounded();
+  @include hoverBorder();
+
+  padding: 0 20px;
+  height: 50px;
+  width: 400px;
+}

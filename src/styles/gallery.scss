@@ -1,0 +1,81 @@
+@import 'variables';
+@import 'mixins';
+
+.app__gallery {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__gallery-button {
+  @include rounded();
+
+  margin-top: 60px;
+  padding: 0 30px;
+  width: min-content;
+  height: 50px;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  cursor: pointer;
+  @include hoverBorder();
+}
+
+.app__gallery__board {
+  display: grid;
+  grid-template-columns: $card-w;
+  grid-auto-rows: auto;
+  grid-gap: 38px 22px;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(2, $card-w);
+  }
+
+  @include breakpoint(desktop) {
+    grid-template-columns: repeat(3, $card-w);
+  }
+}
+
+.app__gallery__board-card {
+  border: $border;
+  background: $card-bg;
+}
+
+.app__gallery__board-card-desc {
+  padding: 20px;
+  font-size: 1em;
+
+  header {
+    margin-bottom: 15px;
+  }
+}
+
+.app__gallery__board-card-img {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    height: $card-h;
+  }
+}
+
+.app__gallery__board-card-mark {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  padding: 10px;
+  color: $white;
+  font-size: 12px;
+  font-weight: bold;
+
+  &.independent {
+    background: $bg-mark-independent;
+  }
+  &.support {
+    background: $bg-mark-support;
+  }
+}
