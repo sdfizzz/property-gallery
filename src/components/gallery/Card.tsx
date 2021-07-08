@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CardPropType, CardType } from './types';
+import { CardPropType, CardType } from '../../store/types';
 
 const Mark = ({ type }: { type: CardType }) => {
   if (type === 'IndependentLiving') {
