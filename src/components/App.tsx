@@ -1,22 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createStore, applyMiddleware, Store } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
 
 import Header from './Header';
 import Toolbar from './toolbar/Toolbar';
 import Gallery from './gallery/Gallery';
+import { useDispatch } from 'react-redux';
+import { loadCards } from '../store/actionCreators';
 
-import reducer from '../store/reducer';
-import { Action, DispatchType, State } from '../store/types';
+const App = () => {
+  const dispatch = useDispatch();
 
-const store: Store<State, Action> & {
-  dispatch: DispatchType;
-} = createStore(reducer, applyMiddleware(thunk));
+  useEffect(() => {
+    dispatch(loadCards());
+  }, [dispatch]);
 
-const App = () => (
-  <Provider store={store}>
+  return (
     <Router>
       <Route exact path="/">
         <section className="app">
@@ -26,7 +24,7 @@ const App = () => (
         </section>
       </Route>
     </Router>
-  </Provider>
-);
+  );
+};
 
 export default App;

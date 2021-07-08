@@ -4,7 +4,7 @@ import { Action, AddCardAction, FilterAction, State } from './types';
 const initialState: State = {
   cards: [],
   filteredCards: [],
-  isLoading: true,
+  isLoading: false,
 };
 
 const reducer = (state: State = initialState, action: Action) => {
@@ -30,7 +30,7 @@ const reducer = (state: State = initialState, action: Action) => {
       const filterStr = (action as FilterAction).filter;
       return {
         ...state,
-        filteredCards: state.cards.filter((v) => v.title.includes(filterStr)),
+        filteredCards: filterStr.length > 3 ? state.cards.filter((v) => v.title.includes(filterStr)) : [...state.cards],
       };
   }
 

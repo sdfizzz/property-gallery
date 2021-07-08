@@ -48,7 +48,7 @@ const Card = ({ info }: { info: CardPropType }) => {
   return (
     <Link to={`/details/${id}`}>
       <div className="app__gallery__board-card">
-        <Image src={`https://via.placeholder.com/320x200/ACD1AF/FFFFFF?text=${title}`} type={type} />
+        <Image src={`https://via.placeholder.com/340x200/ACD1AF/FFFFFF?text=${title}`} type={type} />
         <Description info={info} />
       </div>
     </Link>

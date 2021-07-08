@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { FILTER_CARDS } from '../../store/actionTypes';
 
-const Filter = ({ onChange }: { onChange: (val: string) => void }) => {
-  const [value, setValue] = useState('');
+const Filter = () => {
+  const [value, setValue] = useState<string>('');
+  const dispatch = useDispatch();
 
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    const newValue = event.currentTarget.value.trim();
-    if (value !== newValue) {
+  const handleChange = useCallback(
+    (event: React.FormEvent<HTMLInputElement>) => {
+      const newValue = event.currentTarget.value.trim();
       setValue(newValue);
-      onChange(newValue);
-    }
-  };
+      if (value !== newValue) {
+        dispatch({ type: FILTER_CARDS, filter: newValue });
+      }
+    },
+    [dispatch],
+  );
 
   return (
     <label className="app__toolbar__filter">
