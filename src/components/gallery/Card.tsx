@@ -32,11 +32,12 @@ const Description = ({ info: { title, address, price } }: { info: CardPropType }
     <p>
       New Properties for Sale from{' '}
       <strong>
-        {price.toLocaleString('en-US', {
+        {Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'GBP',
+          minimumFractionDigits: 0,
           maximumFractionDigits: 0,
-        })}
+        }).format(price)}
       </strong>
     </p>
     <p className="sm">Shared Ownership Available</p>
