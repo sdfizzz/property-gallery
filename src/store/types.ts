@@ -1,4 +1,4 @@
-import { ADD_CARDS, FILTER_CARDS } from './actionTypes';
+import { ADD_CARDS_Type, FILTER_CARDS_Type } from './actionTypes';
 
 export type CardType = 'IndependentLiving' | 'SupportAvailable';
 
@@ -21,12 +21,12 @@ export type Action = {
 };
 
 export type AddCardAction = Action & {
-  type: ADD_CARDS;
+  type: ADD_CARDS_Type;
   cards: CardPropType[];
 };
 
 export type FilterAction = Action & {
-  type: FILTER_CARDS;
+  type: FILTER_CARDS_Type;
   filter: string;
 };
 
