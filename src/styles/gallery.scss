@@ -16,13 +16,16 @@
   width: 150px;
   height: 50px;
   display: flex;
-  column-gap: 8px;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
 
   cursor: pointer;
   @include hoverBorder();
+
+  span {
+    margin-right: 8px;
+  }
 }
 
 .app__gallery__board {

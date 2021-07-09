@@ -45,14 +45,19 @@ span {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  row-gap: 15px;
 
   padding: 0 10px;
 
+  > :not(:last-child) {
+    margin-bottom: 15px;
+  }
+
   @include breakpoint(desktop) {
     margin: auto;
-    row-gap: 45px;
     width: min-content;
     padding: 36px 50px;
+    > :not(:last-child) {
+      margin-bottom: 45px;
+    }
   }
 }
