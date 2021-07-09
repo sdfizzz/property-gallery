@@ -14,8 +14,9 @@
 }
 
 .app__toolbar__filter-label {
+  @include headerM();
+
   margin-right: 10px;
-  font-weight: 700;
 }
 
 .app__toolbar__filter-input {

@@ -10,6 +10,7 @@
 
 .app__gallery-button {
   @include rounded();
+  @include hoverBorder();
 
   margin-top: 60px;
   padding: 0 30px;
@@ -21,9 +22,9 @@
   white-space: nowrap;
 
   cursor: pointer;
-  @include hoverBorder();
 
   span {
+    @include headerM();
     margin-right: 8px;
   }
 }
@@ -58,8 +59,8 @@
 }
 
 .app__gallery__board-card-desc {
+  @include textReg();
   padding: 20px;
-  font-size: 1em;
 
   header {
     margin-bottom: 15px;
@@ -77,13 +78,13 @@
 }
 
 .app__gallery__board-card-mark {
+  @include textSmBold();
+
   position: absolute;
   bottom: 4px;
   right: 0;
   padding: 10px;
   color: $white;
-  font-size: 12px;
-  font-weight: bold;
 
   &.independent {
     background: $bg-mark-independent;

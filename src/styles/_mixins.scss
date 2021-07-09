@@ -1,3 +1,4 @@
+@import 'typography';
 @import "variables";
 
 @mixin breakpoint($point) {
@@ -31,4 +32,46 @@
   &:hover, &:focus {
     outline-width: 3px;
   }
+}
+
+@mixin headerXl() {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-xl;
+}
+
+@mixin headerL() {
+  font-size: $font-size-l;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-m;
+}
+
+@mixin headerM() {
+  font-size: $font-size-m;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-m;
+}
+
+@mixin headerSm() {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-m;
+}
+
+@mixin textReg() {
+  font-size: $font-size-m;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-m;
+}
+
+@mixin textSm() {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-m;
+}
+
+@mixin textSmBold() {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-s;
 }
